@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XML to Table</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Local XML Viewer</p>
+          <h1>XML to Table</h1>
+          <p class="subtitle">
+            Drop an XML file and preview its records as a clean, flat table.
+          </p>
+        </div>
+        <div class="badge">No Uploads</div>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label class="file control-file" id="dropZone">
+            <input id="xmlFile" type="file" accept=".xml,text/xml,application/xml" />
+            <span>Choose XML</span>
+          </label>
+
+          <label class="toggle control-group">
+            <input id="groupByBl" type="checkbox" checked />
+            <span>Group errors by BL</span>
+          </label>
+
+          <label class="toggle control-simple">
+            <input id="simpleView" type="checkbox" checked />
+            <span>Simple view (BL + Error)</span>
+          </label>
+
+          <label class="toggle control-status-toggle">
+            <input id="hideStatusS" type="checkbox" checked />
+            <span>Show only Errors</span>
+          </label>
+
+          <div id="status" class="status control-message">Waiting for a file...</div>
+
+          <div class="actions control-actions">
+            <button id="parseBtn">Render table</button>
+            <button id="downloadBtn" class="secondary" disabled>Download CSV</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-wrap">
+        <div class="table-meta">
+          <div id="meta">No data yet.</div>
+          <div id="detected"></div>
+        </div>
+        <div class="table-scroll">
+          <table id="table"></table>
+        </div>
+        <div id="summary" class="table-summary">Selected BLs: 0</div>
+      </section>
+
+      <footer class="footer">
+        Everything runs locally in your browser. Nothing is uploaded.
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
