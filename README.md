@@ -2,14 +2,14 @@
 
 Two options:
 
-1) Browser app: open `index.html`, upload the XML, and see the table instantly.
+1) Browser app: open `docs/index.html`, upload the XML, and see the table instantly.
 2) CLI tool: convert XML to Excel (or CSV) via Python.
 
 ## Usage
 
 ### Browser app
 
-Open `XML_TOOL/index.html` in your browser and upload an XML file.
+Open `docs/index.html` in your browser and upload an XML file.
 Use "Group errors by BL" to cluster error rows by BL with a header row per BL.
 Each column header has a filter dropdown with checkboxes to select multiple values.
 BL groups start collapsed; click the BL header row to expand or collapse.
