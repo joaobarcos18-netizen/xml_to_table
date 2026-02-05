@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XML Reader</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">XML Viewer</p>
+          <h1>LEITOR DE MANIFESTOS</h1>
+          <p class="subtitle">
+            Cola aqui o ficheiro XML e visualize os seus registos como uma tabela.
+          </p>
+        </div>
+        <div class="hero-aside">
+          <div class="hero-brand">
+            <img src="assets/navex-logo.png" alt="Navex" />
+          </div>
+          <div class="badge">Sem ficheiros</div>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label class="file control-file" id="dropZone">
+            <input id="xmlFile" type="file" accept=".xml,text/xml,application/xml" />
+            <span>Escolhe o XML</span>
+          </label>
+
+          <label class="toggle control-group">
+            <input id="groupByBl" type="checkbox" checked />
+            <span>Juntar os erros por BL</span>
+          </label>
+
+          <label class="toggle control-simple">
+            <input id="simpleView" type="checkbox" checked />
+            <span>Visualização Simples</span>
+          </label>
+
+          <label class="toggle control-status-toggle">
+            <input id="hideStatusS" type="checkbox" checked />
+            <span>Mostrar apenas os erros</span>
+          </label>
+
+          <div id="status" class="status control-message">À espera de ficheiro...</div>
+
+          <div class="actions control-actions">
+            <button id="parseBtn">Refrescar Tabela</button>
+            <button id="downloadBtn" class="secondary" disabled>Download CSV</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-wrap">
+        <div class="table-meta">
+          <div id="meta">Ainda sem dados.</div>
+          <div id="detected"></div>
+        </div>
+        <div class="table-scroll">
+          <table id="table"></table>
+        </div>
+        <div id="summary" class="table-summary">Bls Selecionados: 0</div>
+      </section>
+
+      <footer class="footer">
+        Corre tudo localmente no seu navegador. Nada é carregado.
+      </footer>
+    </div>
+
+    <script defer src="js/state.js"></script>
+    <script defer src="js/parser.js"></script>
+    <script defer src="js/table.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="app.js"></script>
+  </body>
+</html>
